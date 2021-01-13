@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces
+      visualID="2051"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'CommandAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5042"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2052"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Aggregate') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5047"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7007"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2053"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'QueryAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5048"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2054"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ValueObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5049"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2055"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Entity') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5050"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2056"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ExternalSystem') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5051"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2057"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ConstraintPin') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5052"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2058"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2059"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ForkNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2060"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'JoinNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2061"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DecisionNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5053"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2062"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'MergeNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2063"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'FinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2064"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5054"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2065"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ReadModel') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5055"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2066"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainEvent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5056"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2067"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ControlNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitynode')"/>
+  <nodeTraces
+      visualID="2068"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Actor') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitypartition')">
+    <nodeLabelTraces
+        visualID="5068"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7008"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2069"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'System') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitypartition')">
+    <nodeLabelTraces
+        visualID="5069"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7010"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2070"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityDiagram') and _containmentMF_.name = 'activitypartition')">
+    <nodeLabelTraces
+        visualID="5070"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7011"
+        queryText="true"/>
+  </nodeTraces>
+  <childNodeTraces
+      visualID="3026"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ConstraintPin') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Supplier') and _containmentMF_.name = 'constraints')">
+    <nodeLabelTraces
+        visualID="5043"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3027"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ValueObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Aggregate') and _containmentMF_.name = 'domainobject')">
+    <nodeLabelTraces
+        visualID="5044"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3028"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Entity') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Aggregate') and _containmentMF_.name = 'domainobject')">
+    <nodeLabelTraces
+        visualID="5045"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3029"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Aggregate') and _containmentMF_.name = 'domainobject')">
+    <nodeLabelTraces
+        visualID="5046"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3030"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'CommandAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5057"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3031"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Aggregate') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5058"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7009"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3032"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'QueryAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5059"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3033"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ValueObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5060"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3034"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Entity') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5061"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3035"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ExternalSystem') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5062"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3036"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ConstraintPin') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5063"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3037"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <childNodeTraces
+      visualID="3038"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ForkNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <childNodeTraces
+      visualID="3039"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'JoinNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <childNodeTraces
+      visualID="3040"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DecisionNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5064"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3041"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'MergeNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <childNodeTraces
+      visualID="3042"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'FinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <childNodeTraces
+      visualID="3043"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainObject') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5065"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3044"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ReadModel') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5066"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3045"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainEvent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')">
+    <nodeLabelTraces
+        visualID="5067"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3046"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ControlNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityPartition') and _containmentMF_.name = 'activitynode')"/>
+  <linkTraces
+      visualID="4021"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ObjectFlow')"/>
+  <linkTraces
+      visualID="4022"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ObjectFlow')"/>
+  <linkTraces
+      visualID="4023"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ControlFlow')"/>
+  <linkTraces
+      visualID="4024"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ControlFlow')"/>
+  <linkTraces
+      visualID="4025"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityEdge')"/>
+  <linkTraces
+      visualID="4026"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ActivityEdge')"/>
+  <linkTraces
+      visualID="4027"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Action') and _feature_.name = 'supplier')">
+    <linkLabelTraces
+        visualID="6015"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4028"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Supplier') and _feature_.name = 'triggers')">
+    <linkLabelTraces
+        visualID="6016"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4029"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'Supplier') and _feature_.name = 'readmodels')">
+    <linkLabelTraces
+        visualID="6017"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4030"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'DomainEvent') and _feature_.name = 'readmodel')">
+    <linkLabelTraces
+        visualID="6018"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4031"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'metamodel/ActivityStorming.ecore' and _eClass_.name = 'ConstraintPin') and _feature_.name = 'triggers')">
+    <linkLabelTraces
+        visualID="6019"
+        queryText="true"/>
+  </linkTraces>
+</trace:TraceModel>

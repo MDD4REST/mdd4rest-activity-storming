@@ -1,0 +1,21 @@
+/*
+ * 
+ */
+package ActivityStorming.diagram.providers;
+
+import org.eclipse.gmf.runtime.common.ui.services.icon.IIconProvider;
+import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
+
+/**
+ * @generated
+ */
+public class ActivityStormingIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
+
+	/**
+	* @generated
+	*/
+	public ActivityStormingIconProvider() {
+		super(ActivityStorming.diagram.providers.ActivityStormingElementTypes.TYPED_INSTANCE);
+	}
+
+}

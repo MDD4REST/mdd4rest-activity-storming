@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/activity-storming/src" modelPluginID="activity-storming"
+    modelName="ActivityStorming" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>ActivityStorming.emf</foreignModel>
+  <genPackages prefix="ActivityStorming" disposableProviderFactory="true" ecorePackage="ActivityStorming.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityStorming.ecore#//ObjectNodeOrderingKind">
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectNodeOrderingKind/unordered"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectNodeOrderingKind/ordered"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectNodeOrderingKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectNodeOrderingKind/LIFO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityStorming.ecore#//ObjectActionKind">
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectActionKind/createObjectAction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectActionKind/destroyObjectAction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectActionKind/testIdentityAction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectActionKind/readSelfAction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityStorming.ecore#//ObjectActionKind/valueSpecificationAction"/>
+    </genEnums>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ActivityDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityDiagram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityDiagram/precondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityDiagram/postcondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityDiagram/isReadOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityDiagram/isSingleExecution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityDiagram/activityedge"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityDiagram/activitynode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityDiagram/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityDiagram/activitypartition"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ActivityNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityNode/incomming"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityNode/outcomming"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityNode/activitypartition"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ActivityEdge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityEdge/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityEdge/guard"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityEdge/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityEdge/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityEdge/weight"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityEdge/activitypartition"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ObjectFlow"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ControlFlow"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ControlNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ExecutableNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//InitialNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ForkNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//JoinNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//DecisionNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//DecisionNode/objectnode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//DecisionNode/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//MergeNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//FinalNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//InputPin"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//OutputPin"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Pin"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ObjectNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ObjectNode/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ObjectNode/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ObjectNode/isControlType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ObjectNode/order"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ObjectNode/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ActivityParameterNode"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//Variable/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//Variable/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ValueSpecification"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Action/inputpin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Action/outputpin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Action/supplier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Action/callactions"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//CallAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//StartObjectBehaviorAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ObjectAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ObjectAction/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//CallBehaviorAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//CallOperationAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//CallActivityAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//CallActivityAction/activitydiagram"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ActivityPartition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ActivityPartition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityPartition/subpartition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityPartition/activityedge"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ActivityPartition/activitynode"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//CommandAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Aggregate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Aggregate/domainobject"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//QueryAction"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//DomainObject"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ValueObject"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Entity"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//Actor"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//System"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ExternalSystem"/>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ReadModel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ReadModel/supplier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ReadModel/event"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ActivityStorming.ecore#//Supplier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Supplier/action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Supplier/triggers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Supplier/readmodels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//Supplier/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//DomainEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//DomainEvent/readmodel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//DomainEvent/supplier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//DomainEvent/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityStorming.ecore#//ConstraintPin">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ConstraintPin/supplier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityStorming.ecore#//ConstraintPin/triggers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityStorming.ecore#//ConstraintPin/description"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

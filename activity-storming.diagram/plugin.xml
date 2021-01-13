@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="activitystorming_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="activitystorming_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ActivityStormingDiagramFile.gif"
+         extensions="activitystorming_diagram"
+         default="true"
+         class="ActivityStorming.diagram.part.ActivityStormingDiagramEditor"
+         matchingStrategy="ActivityStorming.diagram.part.ActivityStormingMatchingStrategy"
+         contributorClass="ActivityStorming.diagram.part.ActivityStormingDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="ActivityStorming.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ActivityStormingDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="ActivityStorming.diagram.part.ActivityStormingCreationWizard"
+  	     id="ActivityStorming.diagram.part.ActivityStormingCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="activity-storming.diagram.InitDiagram"
+            nameFilter="*.activitystorming"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="ActivityStorming.diagram.part.ActivityStormingInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="activity-storming.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="ActivityStormingPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="ActivityStormingPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="ActivityStormingPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="ActivityStormingRender">
+         <Priority name="Lowest"/>
+         <ViewId id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="ActivityStorming.diagram.providers.ActivityStormingMarkerNavigationProvider">
+         <MarkerType name="activity-storming.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="ActivityStorming Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ActivityStorming.diagram.providers.ActivityStormingValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="ActivityStorming.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="activity-storming.diagram.general"
+            name="%prefpage.activity-storming.diagram.general"
+            class="ActivityStorming.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="activity-storming.diagram.appearance"
+            name="%prefpage.activity-storming.diagram.appearance"
+            category="activity-storming.diagram.general"
+            class="ActivityStorming.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="activity-storming.diagram.connections"
+            name="%prefpage.activity-storming.diagram.connections"
+            category="activity-storming.diagram.general"
+            class="ActivityStorming.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="activity-storming.diagram.printing"
+            name="%prefpage.activity-storming.diagram.printing"
+            category="activity-storming.diagram.general"
+            class="ActivityStorming.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="activity-storming.diagram.rulersAndGrid"
+            name="%prefpage.activity-storming.diagram.rulersAndGrid"
+            category="activity-storming.diagram.general"
+            class="ActivityStorming.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="activity-storming.diagram"
+            labelProvider="ActivityStorming.diagram.sheet.ActivityStormingSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="activity-storming.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="activity-storming.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="ActivityStorming.diagram.sheet.ActivityStormingPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="ActivityStorming.diagram.providers.ActivityStormingViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="ActivityStorming"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ActivityStorming"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2051,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4021,4022,4023,4024,4025,4026,4027,4028,4029,4030,4031"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="ActivityStorming.diagram.providers.ActivityStormingEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="ActivityStorming"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2051,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4021,4022,4023,4024,4025,4026,4027,4028,4029,4030,4031"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5042,5047,5048,5049,5050,5051,5052,5053,5054,5055,5056,5068,5069,5070,5043,5044,5045,5046,5057,5058,5059,5060,5061,5062,5063,5064,5065,5066,5067"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7007,7008,7009,7010,7011"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfActivityDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ActivityDiagramEditPart" id="ActivityDiagram_1000"/>
+         <context elements="ActivityDiagram_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfCommandActionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.CommandActionEditPart" id="CommandAction_2051"/>
+         <context elements="CommandAction_2051"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfAggregateEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.AggregateEditPart" id="Aggregate_2052"/>
+         <context elements="Aggregate_2052"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfQueryActionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.QueryActionEditPart" id="QueryAction_2053"/>
+         <context elements="QueryAction_2053"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfValueObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ValueObjectEditPart" id="ValueObject_2054"/>
+         <context elements="ValueObject_2054"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfEntityEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.EntityEditPart" id="Entity_2055"/>
+         <context elements="Entity_2055"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfExternalSystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ExternalSystemEditPart" id="ExternalSystem_2056"/>
+         <context elements="ExternalSystem_2056"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfConstraintPinEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ConstraintPinEditPart" id="ConstraintPin_2057"/>
+         <context elements="ConstraintPin_2057"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfInitialNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2058"/>
+         <context elements="InitialNode_2058"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfForkNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ForkNodeEditPart" id="ForkNode_2059"/>
+         <context elements="ForkNode_2059"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfJoinNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.JoinNodeEditPart" id="JoinNode_2060"/>
+         <context elements="JoinNode_2060"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDecisionNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DecisionNodeEditPart" id="DecisionNode_2061"/>
+         <context elements="DecisionNode_2061"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfMergeNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.MergeNodeEditPart" id="MergeNode_2062"/>
+         <context elements="MergeNode_2062"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfFinalNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.FinalNodeEditPart" id="FinalNode_2063"/>
+         <context elements="FinalNode_2063"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDomainObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DomainObjectEditPart" id="DomainObject_2064"/>
+         <context elements="DomainObject_2064"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfReadModelEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ReadModelEditPart" id="ReadModel_2065"/>
+         <context elements="ReadModel_2065"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDomainEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DomainEventEditPart" id="DomainEvent_2066"/>
+         <context elements="DomainEvent_2066"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfControlNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ControlNodeEditPart" id="ControlNode_2067"/>
+         <context elements="ControlNode_2067"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfActorEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ActorEditPart" id="Actor_2068"/>
+         <context elements="Actor_2068"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfSystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.SystemEditPart" id="System_2069"/>
+         <context elements="System_2069"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfActivityPartitionEditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ActivityPartitionEditPart" id="ActivityPartition_2070"/>
+         <context elements="ActivityPartition_2070"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfConstraintPin2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ConstraintPin2EditPart" id="ConstraintPin_3026"/>
+         <context elements="ConstraintPin_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfValueObject2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ValueObject2EditPart" id="ValueObject_3027"/>
+         <context elements="ValueObject_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfEntity2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.Entity2EditPart" id="Entity_3028"/>
+         <context elements="Entity_3028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDomainObject2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DomainObject2EditPart" id="DomainObject_3029"/>
+         <context elements="DomainObject_3029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfCommandAction2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.CommandAction2EditPart" id="CommandAction_3030"/>
+         <context elements="CommandAction_3030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfAggregate2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.Aggregate2EditPart" id="Aggregate_3031"/>
+         <context elements="Aggregate_3031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfQueryAction2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.QueryAction2EditPart" id="QueryAction_3032"/>
+         <context elements="QueryAction_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfValueObject3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ValueObject3EditPart" id="ValueObject_3033"/>
+         <context elements="ValueObject_3033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfEntity3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.Entity3EditPart" id="Entity_3034"/>
+         <context elements="Entity_3034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfExternalSystem2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ExternalSystem2EditPart" id="ExternalSystem_3035"/>
+         <context elements="ExternalSystem_3035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfConstraintPin3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ConstraintPin3EditPart" id="ConstraintPin_3036"/>
+         <context elements="ConstraintPin_3036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfInitialNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.InitialNode2EditPart" id="InitialNode_3037"/>
+         <context elements="InitialNode_3037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfForkNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ForkNode2EditPart" id="ForkNode_3038"/>
+         <context elements="ForkNode_3038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfJoinNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.JoinNode2EditPart" id="JoinNode_3039"/>
+         <context elements="JoinNode_3039"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDecisionNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DecisionNode2EditPart" id="DecisionNode_3040"/>
+         <context elements="DecisionNode_3040"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfMergeNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.MergeNode2EditPart" id="MergeNode_3041"/>
+         <context elements="MergeNode_3041"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfFinalNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.FinalNode2EditPart" id="FinalNode_3042"/>
+         <context elements="FinalNode_3042"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDomainObject3EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DomainObject3EditPart" id="DomainObject_3043"/>
+         <context elements="DomainObject_3043"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfReadModel2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ReadModel2EditPart" id="ReadModel_3044"/>
+         <context elements="ReadModel_3044"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfDomainEvent2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.DomainEvent2EditPart" id="DomainEvent_3045"/>
+         <context elements="DomainEvent_3045"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ActivityStorming.diagram.providers.assistants.ActivityStormingModelingAssistantProviderOfControlNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ActivityStorming.diagram.edit.parts.ControlNode2EditPart" id="ControlNode_3046"/>
+         <context elements="ControlNode_3046"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="ActivityStorming.diagram.providers.ActivityStormingIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="ActivityStorming.diagram.providers.ActivityStormingParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ActivityStorming.diagram.providers.ActivityStormingShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2051,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2068,2069,2070"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ActivityDiagram_1000"
+               name="%metatype.name.ActivityDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityDiagram"
+               edithelper="ActivityStorming.diagram.edit.helpers.ActivityDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.CommandAction_2051"
+               name="%metatype.name.CommandAction_2051"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CommandAction"
+               edithelper="ActivityStorming.diagram.edit.helpers.CommandActionEditHelper">
+            <param name="semanticHint" value="2051"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.Aggregate_2052"
+               name="%metatype.name.Aggregate_2052"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Aggregate"
+               edithelper="ActivityStorming.diagram.edit.helpers.AggregateEditHelper">
+            <param name="semanticHint" value="2052"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.QueryAction_2053"
+               name="%metatype.name.QueryAction_2053"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="QueryAction"
+               edithelper="ActivityStorming.diagram.edit.helpers.QueryActionEditHelper">
+            <param name="semanticHint" value="2053"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ValueObject_2054"
+               name="%metatype.name.ValueObject_2054"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ValueObject_3027"/>
+            <param name="semanticHint" value="2054"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.Entity_2055"
+               name="%metatype.name.Entity_2055"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.Entity_3028"/>
+            <param name="semanticHint" value="2055"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ExternalSystem_2056"
+               name="%metatype.name.ExternalSystem_2056"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExternalSystem"
+               edithelper="ActivityStorming.diagram.edit.helpers.ExternalSystemEditHelper">
+            <param name="semanticHint" value="2056"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ConstraintPin_2057"
+               name="%metatype.name.ConstraintPin_2057"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ConstraintPin_3026"/>
+            <param name="semanticHint" value="2057"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.InitialNode_2058"
+               name="%metatype.name.InitialNode_2058"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InitialNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.InitialNodeEditHelper">
+            <param name="semanticHint" value="2058"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ForkNode_2059"
+               name="%metatype.name.ForkNode_2059"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ForkNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.ForkNodeEditHelper">
+            <param name="semanticHint" value="2059"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.JoinNode_2060"
+               name="%metatype.name.JoinNode_2060"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="JoinNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.JoinNodeEditHelper">
+            <param name="semanticHint" value="2060"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.DecisionNode_2061"
+               name="%metatype.name.DecisionNode_2061"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DecisionNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.DecisionNodeEditHelper">
+            <param name="semanticHint" value="2061"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.MergeNode_2062"
+               name="%metatype.name.MergeNode_2062"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MergeNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.MergeNodeEditHelper">
+            <param name="semanticHint" value="2062"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.FinalNode_2063"
+               name="%metatype.name.FinalNode_2063"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FinalNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.FinalNodeEditHelper">
+            <param name="semanticHint" value="2063"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.DomainObject_2064"
+               name="%metatype.name.DomainObject_2064"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.DomainObject_3029"/>
+            <param name="semanticHint" value="2064"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ReadModel_2065"
+               name="%metatype.name.ReadModel_2065"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ReadModel"
+               edithelper="ActivityStorming.diagram.edit.helpers.ReadModelEditHelper">
+            <param name="semanticHint" value="2065"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.DomainEvent_2066"
+               name="%metatype.name.DomainEvent_2066"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DomainEvent"
+               edithelper="ActivityStorming.diagram.edit.helpers.DomainEventEditHelper">
+            <param name="semanticHint" value="2066"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ControlNode_2067"
+               name="%metatype.name.ControlNode_2067"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ControlNode"
+               edithelper="ActivityStorming.diagram.edit.helpers.ControlNodeEditHelper">
+            <param name="semanticHint" value="2067"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.Actor_2068"
+               name="%metatype.name.Actor_2068"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Actor"
+               edithelper="ActivityStorming.diagram.edit.helpers.ActorEditHelper">
+            <param name="semanticHint" value="2068"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.System_2069"
+               name="%metatype.name.System_2069"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="System"
+               edithelper="ActivityStorming.diagram.edit.helpers.SystemEditHelper">
+            <param name="semanticHint" value="2069"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ActivityPartition_2070"
+               name="%metatype.name.ActivityPartition_2070"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityPartition"
+               edithelper="ActivityStorming.diagram.edit.helpers.ActivityPartitionEditHelper">
+            <param name="semanticHint" value="2070"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ConstraintPin_3026"
+               name="%metatype.name.ConstraintPin_3026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConstraintPin"
+               edithelper="ActivityStorming.diagram.edit.helpers.ConstraintPinEditHelper">
+            <param name="semanticHint" value="3026"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ValueObject_3027"
+               name="%metatype.name.ValueObject_3027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ValueObject"
+               edithelper="ActivityStorming.diagram.edit.helpers.ValueObjectEditHelper">
+            <param name="semanticHint" value="3027"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.Entity_3028"
+               name="%metatype.name.Entity_3028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Entity"
+               edithelper="ActivityStorming.diagram.edit.helpers.EntityEditHelper">
+            <param name="semanticHint" value="3028"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.DomainObject_3029"
+               name="%metatype.name.DomainObject_3029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DomainObject"
+               edithelper="ActivityStorming.diagram.edit.helpers.DomainObjectEditHelper">
+            <param name="semanticHint" value="3029"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.CommandAction_3030"
+               name="%metatype.name.CommandAction_3030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.CommandAction_2051"/>
+            <param name="semanticHint" value="3030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.Aggregate_3031"
+               name="%metatype.name.Aggregate_3031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.Aggregate_2052"/>
+            <param name="semanticHint" value="3031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.QueryAction_3032"
+               name="%metatype.name.QueryAction_3032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.QueryAction_2053"/>
+            <param name="semanticHint" value="3032"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ValueObject_3033"
+               name="%metatype.name.ValueObject_3033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ValueObject_3027"/>
+            <param name="semanticHint" value="3033"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.Entity_3034"
+               name="%metatype.name.Entity_3034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.Entity_3028"/>
+            <param name="semanticHint" value="3034"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ExternalSystem_3035"
+               name="%metatype.name.ExternalSystem_3035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ExternalSystem_2056"/>
+            <param name="semanticHint" value="3035"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ConstraintPin_3036"
+               name="%metatype.name.ConstraintPin_3036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ConstraintPin_3026"/>
+            <param name="semanticHint" value="3036"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.InitialNode_3037"
+               name="%metatype.name.InitialNode_3037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.InitialNode_2058"/>
+            <param name="semanticHint" value="3037"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ForkNode_3038"
+               name="%metatype.name.ForkNode_3038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ForkNode_2059"/>
+            <param name="semanticHint" value="3038"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.JoinNode_3039"
+               name="%metatype.name.JoinNode_3039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.JoinNode_2060"/>
+            <param name="semanticHint" value="3039"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.DecisionNode_3040"
+               name="%metatype.name.DecisionNode_3040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.DecisionNode_2061"/>
+            <param name="semanticHint" value="3040"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.MergeNode_3041"
+               name="%metatype.name.MergeNode_3041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.MergeNode_2062"/>
+            <param name="semanticHint" value="3041"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.FinalNode_3042"
+               name="%metatype.name.FinalNode_3042"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.FinalNode_2063"/>
+            <param name="semanticHint" value="3042"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.DomainObject_3043"
+               name="%metatype.name.DomainObject_3043"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.DomainObject_3029"/>
+            <param name="semanticHint" value="3043"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ReadModel_3044"
+               name="%metatype.name.ReadModel_3044"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ReadModel_2065"/>
+            <param name="semanticHint" value="3044"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.DomainEvent_3045"
+               name="%metatype.name.DomainEvent_3045"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.DomainEvent_2066"/>
+            <param name="semanticHint" value="3045"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ControlNode_3046"
+               name="%metatype.name.ControlNode_3046"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ControlNode_2067"/>
+            <param name="semanticHint" value="3046"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ObjectFlow_4021"
+               name="%metatype.name.ObjectFlow_4021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ObjectFlow"
+               edithelper="ActivityStorming.diagram.edit.helpers.ObjectFlowEditHelper">
+            <param name="semanticHint" value="4021"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ObjectFlow_4022"
+               name="%metatype.name.ObjectFlow_4022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ObjectFlow_4021"/>
+            <param name="semanticHint" value="4022"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ControlFlow_4023"
+               name="%metatype.name.ControlFlow_4023"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ControlFlow"
+               edithelper="ActivityStorming.diagram.edit.helpers.ControlFlowEditHelper">
+            <param name="semanticHint" value="4023"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ControlFlow_4024"
+               name="%metatype.name.ControlFlow_4024"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ControlFlow_4023"/>
+            <param name="semanticHint" value="4024"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <metamodelType
+               id="activity-storming.diagram.ActivityEdge_4025"
+               name="%metatype.name.ActivityEdge_4025"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityEdge"
+               edithelper="ActivityStorming.diagram.edit.helpers.ActivityEdgeEditHelper">
+            <param name="semanticHint" value="4025"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ActivityEdge_4026"
+               name="%metatype.name.ActivityEdge_4026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="activity-storming.diagram.ActivityEdge_4025"/>
+            <param name="semanticHint" value="4026"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ActionSupplier_4027"
+               name="%metatype.name.ActionSupplier_4027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4027"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.SupplierTriggers_4028"
+               name="%metatype.name.SupplierTriggers_4028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4028"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.SupplierReadmodels_4029"
+               name="%metatype.name.SupplierReadmodels_4029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4029"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.DomainEventReadmodel_4030"
+               name="%metatype.name.DomainEventReadmodel_4030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="metamodel/ActivityStorming.ecore">
+         <specializationType
+               id="activity-storming.diagram.ConstraintPinTriggers_4031"
+               name="%metatype.name.ConstraintPinTriggers_4031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4031"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="activity-storming.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="activity-storming.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="activity-storming.diagram.TypeContext">
+         <elementType ref="activity-storming.diagram.ActivityDiagram_1000"/>
+         <elementType ref="activity-storming.diagram.CommandAction_2051"/>
+         <elementType ref="activity-storming.diagram.Aggregate_2052"/>
+         <elementType ref="activity-storming.diagram.QueryAction_2053"/>
+         <elementType ref="activity-storming.diagram.ValueObject_2054"/>
+         <elementType ref="activity-storming.diagram.Entity_2055"/>
+         <elementType ref="activity-storming.diagram.ExternalSystem_2056"/>
+         <elementType ref="activity-storming.diagram.ConstraintPin_2057"/>
+         <elementType ref="activity-storming.diagram.InitialNode_2058"/>
+         <elementType ref="activity-storming.diagram.ForkNode_2059"/>
+         <elementType ref="activity-storming.diagram.JoinNode_2060"/>
+         <elementType ref="activity-storming.diagram.DecisionNode_2061"/>
+         <elementType ref="activity-storming.diagram.MergeNode_2062"/>
+         <elementType ref="activity-storming.diagram.FinalNode_2063"/>
+         <elementType ref="activity-storming.diagram.DomainObject_2064"/>
+         <elementType ref="activity-storming.diagram.ReadModel_2065"/>
+         <elementType ref="activity-storming.diagram.DomainEvent_2066"/>
+         <elementType ref="activity-storming.diagram.ControlNode_2067"/>
+         <elementType ref="activity-storming.diagram.Actor_2068"/>
+         <elementType ref="activity-storming.diagram.System_2069"/>
+         <elementType ref="activity-storming.diagram.ActivityPartition_2070"/>
+         <elementType ref="activity-storming.diagram.ConstraintPin_3026"/>
+         <elementType ref="activity-storming.diagram.ValueObject_3027"/>
+         <elementType ref="activity-storming.diagram.Entity_3028"/>
+         <elementType ref="activity-storming.diagram.DomainObject_3029"/>
+         <elementType ref="activity-storming.diagram.CommandAction_3030"/>
+         <elementType ref="activity-storming.diagram.Aggregate_3031"/>
+         <elementType ref="activity-storming.diagram.QueryAction_3032"/>
+         <elementType ref="activity-storming.diagram.ValueObject_3033"/>
+         <elementType ref="activity-storming.diagram.Entity_3034"/>
+         <elementType ref="activity-storming.diagram.ExternalSystem_3035"/>
+         <elementType ref="activity-storming.diagram.ConstraintPin_3036"/>
+         <elementType ref="activity-storming.diagram.InitialNode_3037"/>
+         <elementType ref="activity-storming.diagram.ForkNode_3038"/>
+         <elementType ref="activity-storming.diagram.JoinNode_3039"/>
+         <elementType ref="activity-storming.diagram.DecisionNode_3040"/>
+         <elementType ref="activity-storming.diagram.MergeNode_3041"/>
+         <elementType ref="activity-storming.diagram.FinalNode_3042"/>
+         <elementType ref="activity-storming.diagram.DomainObject_3043"/>
+         <elementType ref="activity-storming.diagram.ReadModel_3044"/>
+         <elementType ref="activity-storming.diagram.DomainEvent_3045"/>
+         <elementType ref="activity-storming.diagram.ControlNode_3046"/>
+         <elementType ref="activity-storming.diagram.ObjectFlow_4021"/>
+         <elementType ref="activity-storming.diagram.ObjectFlow_4022"/>
+         <elementType ref="activity-storming.diagram.ControlFlow_4023"/>
+         <elementType ref="activity-storming.diagram.ControlFlow_4024"/>
+         <elementType ref="activity-storming.diagram.ActivityEdge_4025"/>
+         <elementType ref="activity-storming.diagram.ActivityEdge_4026"/>
+         <elementType ref="activity-storming.diagram.ActionSupplier_4027"/>
+         <elementType ref="activity-storming.diagram.SupplierTriggers_4028"/>
+         <elementType ref="activity-storming.diagram.SupplierReadmodels_4029"/>
+         <elementType ref="activity-storming.diagram.DomainEventReadmodel_4030"/>
+         <elementType ref="activity-storming.diagram.ConstraintPinTriggers_4031"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="activity-storming.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="activity-storming.diagram"
+           properties="isURIEditorInput"
+           class="ActivityStorming.diagram.part.ActivityStormingUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="activity-storming.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="activity-storming.diagram"
+           properties="isShortcut"
+           class="ActivityStorming.diagram.part.ActivityStormingShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="activity-storming.diagram.resourceContent"/>
+			<contentExtension pattern="activity-storming.diagram.domainResourceContent"/>
+            <contentExtension pattern="activity-storming.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="activity-storming.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="activity-storming.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="ActivityStorming.diagram.navigator.ActivityStormingNavigatorContentProvider" 
+            labelProvider="ActivityStorming.diagram.navigator.ActivityStormingNavigatorLabelProvider"
+            icon="icons/obj16/ActivityStormingDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="activitystorming_diagram"/>
+               </and>
+               <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="activity-storming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="activity-storming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="activity-storming.diagram.navigatorSorter" 
+               class="ActivityStorming.diagram.navigator.ActivityStormingNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="activitystorming_diagram"/>
+                  </and>
+                  <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="activity-storming.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="ActivityStorming.diagram.navigator.ActivityStormingDomainNavigatorContentProvider" 
+            labelProvider="ActivityStorming.diagram.navigator.ActivityStormingDomainNavigatorLabelProvider"
+            icon="icons/obj16/ActivityStormingDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="activitystorming"/>
+               </and>
+               <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="activity-storming.diagram.navigatorActionProvider"
+            class="ActivityStorming.diagram.navigator.ActivityStormingNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="activity-storming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="activity-storming.diagram.navigatorLinkHelper"
+            class="ActivityStorming.diagram.navigator.ActivityStormingNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="activity-storming.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="ActivityStorming.diagram.navigator.ActivityStormingAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="ActivityStorming.diagram.part.ActivityStormingDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="ActivityStorming.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="ActivityStorming.diagram.updateDiagram"
+         contextId="ActivityStorming.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="activity-storming.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="ActivityStorming.diagram.edit.parts.ActivityDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="activity-storming.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="ActivityStorming.diagram.part.ActivityStormingDiagramEditorID"
+         defaultHandler="ActivityStorming.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

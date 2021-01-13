@@ -1,0 +1,230 @@
+@gmf
+@namespace(uri="metamodel/ActivityStorming.ecore", prefix="icely")
+package ActivityStorming;
+
+@gmf.diagram
+class ActivityDiagram {
+	attr String name;
+	attr String precondition;
+	attr String postcondition;
+	attr boolean isReadOnly;
+	attr boolean isSingleExecution;
+	val ActivityEdge[*] activityedge;
+	val ActivityNode[*] activitynode;
+	val Variable[*] variable;
+	val ActivityPartition[*] activitypartition;
+}
+
+class ActivityNode {
+	ref ActivityEdge[*]#target incomming;
+	ref ActivityEdge[*]#source outcomming;
+	ref ActivityPartition#activitynode activitypartition;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", width="2")
+class ActivityEdge {
+	attr String name;
+	attr String guard;
+	ref ActivityNode[1]#incomming target;
+	ref ActivityNode[1]#outcomming source;
+	val ValueSpecification[*] weight;
+	ref ActivityPartition#activityedge activitypartition;
+}
+
+class ObjectFlow extends ActivityEdge {
+}
+
+class ControlFlow extends ActivityEdge {
+}
+
+@gmf.node(label.placement="none")
+class ControlNode extends ActivityNode {
+}
+
+class ExecutableNode extends ActivityNode {
+}
+
+@gmf.node(tool.name="Initial Node", figure="svg", svg.uri="platform:/plugin/activity-storming/svg/full-moon.svg", label.icon="false", label.placement="none", size="30,30", resizable="false", margin="2")
+class InitialNode extends ControlNode {
+}
+
+@gmf.node(tool.name="Fork Node", figure="svg", svg.uri="platform:/plugin/activity-storming/svg/vertical-line.svg", label.icon="false", label.placement="none", size="10,80", resizable="false", margin="2")
+class ForkNode extends ControlNode {
+}
+
+@gmf.node(tool.name="Join Node", figure="svg", svg.uri="platform:/plugin/activity-storming/svg/vertical-line.svg", label.icon="false", label.placement="none", size="10,80", resizable="false", margin="2")
+class JoinNode extends ControlNode {
+}
+
+@gmf.node(label="name", label.placement="external", tool.name="Decision (Policy)", figure="svg", svg.uri="platform:/plugin/activity-storming/svg/diamond-3.svg", label.icon="false", size="40,40", resizable="false", margin="2")
+class DecisionNode extends ControlNode {
+	ref ObjectNode[*] objectnode;
+	attr String name;
+}
+
+class MergeNode extends ControlNode {
+}
+
+@gmf.node(tool.name="Final Node", figure="svg", svg.uri="platform:/plugin/activity-storming/svg/rec.svg", label.icon="false", label.placement="none", size="30,60", resizable="false", margin="2")
+class FinalNode extends ControlNode {
+}
+
+class InputPin extends Pin {
+}
+
+class OutputPin extends Pin {
+}
+
+class Pin extends ObjectNode {
+}
+
+class ObjectNode extends ActivityNode {
+	attr String name;
+	val ValueSpecification upperBound;
+	attr boolean isControlType;
+	attr ObjectNodeOrderingKind order = "FIFO";
+	val Variable[*] variables;
+}
+
+class ActivityParameterNode extends ObjectNode {
+}
+
+class Variable {
+	attr int upperBound;
+	attr int lowerBound;
+	attr String name;
+}
+
+class ValueSpecification {
+}
+
+enum ObjectNodeOrderingKind {
+	unordered = 0;
+	~ordered = 1;
+	FIFO = 2;
+	LIFO = 3;
+}
+
+class Action extends ExecutableNode {
+	attr String name;
+	val InputPin[*] inputpin;
+	val OutputPin[*] outputpin;
+
+	@gmf.link(tool.name="Action to Supplier", style="dash", target.decoration="arrow", width="2")
+	ref Supplier#action supplier;
+	val CallAction[*] callactions;
+}
+
+class CallAction extends Action {
+}
+
+class StartObjectBehaviorAction extends CallAction {
+}
+
+class ObjectAction extends CallAction {
+	attr ObjectActionKind kind;
+}
+
+class CallBehaviorAction extends CallAction {
+}
+
+class CallOperationAction extends CallAction {
+}
+
+class CallActivityAction extends CallAction {
+	val ActivityDiagram[1] activitydiagram;
+}
+
+enum ObjectActionKind {
+	createObjectAction = 0;
+	destroyObjectAction = 1;
+	testIdentityAction = 2;
+	readSelfAction = 3;
+	valueSpecificationAction = 4;
+}
+
+@gmf.node(label="name")
+class ActivityPartition {
+	attr String name;
+	val ActivityPartition[*] subpartition;
+	val ActivityEdge[*]#activitypartition activityedge;
+
+	@gmf.compartment
+	val ActivityNode[*]#activitypartition activitynode;
+}
+
+@gmf.node(label="name", color="173,216,230")
+class CommandAction extends Action {
+}
+
+@gmf.node(label="name", color="243,208,43")
+class Aggregate extends Supplier {
+
+	@gmf.compartment(layout="list", collapsible="false")
+	val DomainObject[*] domainobject;
+}
+
+@gmf.node(label="name", color="108,198,192")
+class QueryAction extends Action {
+}
+
+@gmf.node(label="name")
+class DomainObject extends ObjectNode {
+}
+
+class ValueObject extends DomainObject {
+}
+
+class Entity extends DomainObject {
+}
+
+@gmf.node(label="name", label.placement="internal", color="255,249,178")
+class Actor extends ActivityPartition {
+}
+
+@gmf.node(label="name", label.placement="internal")
+class System extends ActivityPartition {
+}
+
+@gmf.node(label="name", color="231,147,186")
+class ExternalSystem extends Supplier {
+}
+
+@gmf.node(label="name", color="209,227,109")
+class ReadModel extends ObjectNode {
+	ref Supplier#readmodels supplier;
+	ref DomainEvent#readmodel event;
+}
+
+@gmf.node(label="name")
+abstract class Supplier extends ObjectNode {
+	ref Action#supplier action;
+
+	@gmf.link(tool.name="Supplier to Event", style="dash", target.decoration="arrow", width="2")
+	ref DomainEvent[*]#supplier triggers;
+
+	@gmf.link(tool.name="Supplier to ReadModel", style="dash", target.decoration="arrow", width="2")
+	ref ReadModel[*]#supplier readmodels;
+
+	@gmf.affixed
+	val ConstraintPin[*]#supplier constraints;
+}
+
+@gmf.node(label="name", color="243,156,18")
+class DomainEvent extends ObjectNode {
+
+	@gmf.link(tool.name="Event To ReadModel", style="dash", target.decoration="arrow", width="2")
+	ref ReadModel#event readmodel;
+	ref Supplier#triggers supplier;
+	ref ConstraintPin#triggers constraint;
+}
+
+@gmf.node(figure="rectangle", size="20,20", label="name", label.placement="external", label.icon="false")
+class ConstraintPin extends Pin {
+	ref Supplier#constraints supplier;
+
+	@gmf.link(tool.name="Constraint to Event", style="dash", target.decoration="arrow", width="2")
+	ref DomainEvent[*]#constraint triggers;
+	attr String description;
+}
+
