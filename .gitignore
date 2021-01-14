@@ -102,3 +102,6 @@ plugin.xml_gen
 # Build
 .gradle/
 build/
+
+# gh-pages branch
+/updates/
