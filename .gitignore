@@ -60,7 +60,7 @@ local.properties
 #.project
 
 # Main branch
-features/
-plugins/
-releng/
-activitystorming.parent.iml
+/features/
+/plugins/
+/releng/
+/activitystorming.parent.iml
