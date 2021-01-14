@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated activitystorming -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.github.icelyframework.activitystorming.presentation.ActivitystormingModelWizardID"
+            name="%_UI_ActivitystormingModelWizard_label"
+            class="com.github.icelyframework.activitystorming.presentation.ActivitystormingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ActivitystormingModelFile.gif">
+         <description>%_UI_ActivitystormingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated activitystorming -->
+      <editor
+            id="com.github.icelyframework.activitystorming.presentation.ActivitystormingEditorID"
+            name="%_UI_ActivitystormingEditor_label"
+            icon="icons/full/obj16/ActivitystormingModelFile.gif"
+            extensions="activitystorming"
+            class="com.github.icelyframework.activitystorming.presentation.ActivitystormingEditor"
+            contributorClass="com.github.icelyframework.activitystorming.presentation.ActivitystormingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

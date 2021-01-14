@@ -1,0 +1,16 @@
+<project>
+<modelVersion>4.0.0</modelVersion>
+<artifactId>releng</artifactId>
+<packaging>pom</packaging>
+
+<parent>
+    <groupId>com.github.icelyframework.activitystorming</groupId>
+    <artifactId>activitystorming.parent</artifactId>
+    <version>1.0.0</version>
+</parent>
+
+<modules>
+    <module>com.github.icelyframework.activitystorming.target</module>
+	<module>com.github.icelyframework.activitystorming.update</module>
+</modules>
+</project>

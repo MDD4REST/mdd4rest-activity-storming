@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ActivityStorming -->
+      <package
+            uri="http://github.com/icelyframework/icely-activitystorming"
+            class="ActivityStorming.ActivityStormingPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated activitystorming -->
+      <package
+            uri="http://github.com/icelyframework/activitystorming"
+            class="com.github.icelyframework.activitystorming.ActivitystormingPackage"/>
+   </extension>
+
+</plugin>

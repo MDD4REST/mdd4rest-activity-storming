@@ -1,1 +1,1 @@
-# icely-activity-storming
+# icely-activitystorming

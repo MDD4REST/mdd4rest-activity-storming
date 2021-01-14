@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.icelyframework.activitystorming</groupId>
+	<artifactId>activitystorming.parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>Icely Activity Storming</name>
+
+	<properties>
+		<tycho.version>2.1.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse-repo.url>http://download.eclipse.org/releases/latest</eclipse-repo.url>
+	</properties>
+
+	<modules>
+		<module>plugins</module>
+		<module>features</module>
+		<module>releng</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<id>package-feature</id>
+						<configuration>
+							<finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<executionEnvironment>JavaSE-11</executionEnvironment>
+					<target>
+						<artifact>
+							<groupId>com.github.icelyframework.activitystorming</groupId>
+							<artifactId>com.github.icelyframework.activitystorming.target</artifactId>
+							<version>${project.version}</version>
+						</artifact>
+					</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

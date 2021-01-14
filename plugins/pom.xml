@@ -1,0 +1,19 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>plugins</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.github.icelyframework.activitystorming</groupId>
+        <artifactId>activitystorming.parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modules>
+        <module>com.github.icelyframework.activitystorming</module>
+        <module>com.github.icelyframework.activitystorming.diagram</module>
+        <module>com.github.icelyframework.activitystorming.edit</module>
+        <module>com.github.icelyframework.activitystorming.editor</module>
+        <module>com.github.icelyframework.activitystorming.tests</module>
+    </modules>
+</project>

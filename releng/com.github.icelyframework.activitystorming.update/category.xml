@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="com.github.icelyframework.activitystorming.feature">
+      <category name="Icely Activity Storming"/>
+   </feature>
+   <category-def name="Icely Activity Storming" label="Icely Activity Storming"/>
+</site>

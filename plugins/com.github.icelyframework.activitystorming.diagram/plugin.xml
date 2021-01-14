@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="activitystorming_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="activitystorming_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/ActivitystormingDiagramFile.gif"
+         extensions="activitystorming_diagram"
+         default="true"
+         class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditor"
+         matchingStrategy="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingMatchingStrategy"
+         contributorClass="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="com.github.icelyframework.activitystorming.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ActivitystormingDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingCreationWizard"
+  	     id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="com.github.icelyframework.activitystorming.diagram.InitDiagram"
+            nameFilter="*.activitystorming"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="com.github.icelyframework.activitystorming.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="ActivitystormingPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="ActivitystormingPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="ActivitystormingPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="ActivitystormingRender">
+         <Priority name="Lowest"/>
+         <ViewId id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingMarkerNavigationProvider">
+         <MarkerType name="com.github.icelyframework.activitystorming.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Activitystorming Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="com.github.icelyframework.activitystorming.diagram.general"
+            name="%prefpage.com.github.icelyframework.activitystorming.diagram.general"
+            class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="com.github.icelyframework.activitystorming.diagram.appearance"
+            name="%prefpage.com.github.icelyframework.activitystorming.diagram.appearance"
+            category="com.github.icelyframework.activitystorming.diagram.general"
+            class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="com.github.icelyframework.activitystorming.diagram.connections"
+            name="%prefpage.com.github.icelyframework.activitystorming.diagram.connections"
+            category="com.github.icelyframework.activitystorming.diagram.general"
+            class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="com.github.icelyframework.activitystorming.diagram.printing"
+            name="%prefpage.com.github.icelyframework.activitystorming.diagram.printing"
+            category="com.github.icelyframework.activitystorming.diagram.general"
+            class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="com.github.icelyframework.activitystorming.diagram.rulersAndGrid"
+            name="%prefpage.com.github.icelyframework.activitystorming.diagram.rulersAndGrid"
+            category="com.github.icelyframework.activitystorming.diagram.general"
+            class="com.github.icelyframework.activitystorming.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="com.github.icelyframework.activitystorming.diagram"
+            labelProvider="com.github.icelyframework.activitystorming.diagram.sheet.ActivitystormingSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="com.github.icelyframework.activitystorming.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="com.github.icelyframework.activitystorming.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="com.github.icelyframework.activitystorming.diagram.sheet.ActivitystormingPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="activitystorming"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Activitystorming"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Activitystorming"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5027,5028,5029,5002,5003,5004,5005,5016,5017,5018,5019,5020,5021,5022,5023,5024,5025,5026"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfActivityDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ActivityDiagramEditPart" id="ActivityDiagram_1000"/>
+         <context elements="ActivityDiagram_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfCommandActionEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.CommandActionEditPart" id="CommandAction_2001"/>
+         <context elements="CommandAction_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfAggregateEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.AggregateEditPart" id="Aggregate_2002"/>
+         <context elements="Aggregate_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfQueryActionEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.QueryActionEditPart" id="QueryAction_2003"/>
+         <context elements="QueryAction_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfValueObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ValueObjectEditPart" id="ValueObject_2004"/>
+         <context elements="ValueObject_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfEntityEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.EntityEditPart" id="Entity_2005"/>
+         <context elements="Entity_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfExternalSystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ExternalSystemEditPart" id="ExternalSystem_2006"/>
+         <context elements="ExternalSystem_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfConstraintPinEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ConstraintPinEditPart" id="ConstraintPin_2007"/>
+         <context elements="ConstraintPin_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfInitialNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2008"/>
+         <context elements="InitialNode_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfForkNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ForkNodeEditPart" id="ForkNode_2009"/>
+         <context elements="ForkNode_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfJoinNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.JoinNodeEditPart" id="JoinNode_2010"/>
+         <context elements="JoinNode_2010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDecisionNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DecisionNodeEditPart" id="DecisionNode_2011"/>
+         <context elements="DecisionNode_2011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfMergeNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.MergeNodeEditPart" id="MergeNode_2012"/>
+         <context elements="MergeNode_2012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfFinalNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.FinalNodeEditPart" id="FinalNode_2013"/>
+         <context elements="FinalNode_2013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDomainObjectEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DomainObjectEditPart" id="DomainObject_2014"/>
+         <context elements="DomainObject_2014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfReadModelEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ReadModelEditPart" id="ReadModel_2015"/>
+         <context elements="ReadModel_2015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDomainEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DomainEventEditPart" id="DomainEvent_2016"/>
+         <context elements="DomainEvent_2016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfControlNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ControlNodeEditPart" id="ControlNode_2017"/>
+         <context elements="ControlNode_2017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfActorEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ActorEditPart" id="Actor_2018"/>
+         <context elements="Actor_2018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfSystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.SystemEditPart" id="System_2019"/>
+         <context elements="System_2019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfActivityPartitionEditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ActivityPartitionEditPart" id="ActivityPartition_2020"/>
+         <context elements="ActivityPartition_2020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfConstraintPin2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ConstraintPin2EditPart" id="ConstraintPin_3001"/>
+         <context elements="ConstraintPin_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfValueObject2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ValueObject2EditPart" id="ValueObject_3002"/>
+         <context elements="ValueObject_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfEntity2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.Entity2EditPart" id="Entity_3003"/>
+         <context elements="Entity_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDomainObject2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DomainObject2EditPart" id="DomainObject_3004"/>
+         <context elements="DomainObject_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfCommandAction2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.CommandAction2EditPart" id="CommandAction_3005"/>
+         <context elements="CommandAction_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfAggregate2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.Aggregate2EditPart" id="Aggregate_3006"/>
+         <context elements="Aggregate_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfQueryAction2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.QueryAction2EditPart" id="QueryAction_3007"/>
+         <context elements="QueryAction_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfValueObject3EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ValueObject3EditPart" id="ValueObject_3008"/>
+         <context elements="ValueObject_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfEntity3EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.Entity3EditPart" id="Entity_3009"/>
+         <context elements="Entity_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfExternalSystem2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ExternalSystem2EditPart" id="ExternalSystem_3010"/>
+         <context elements="ExternalSystem_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfConstraintPin3EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ConstraintPin3EditPart" id="ConstraintPin_3011"/>
+         <context elements="ConstraintPin_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfInitialNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.InitialNode2EditPart" id="InitialNode_3012"/>
+         <context elements="InitialNode_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfForkNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ForkNode2EditPart" id="ForkNode_3013"/>
+         <context elements="ForkNode_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfJoinNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.JoinNode2EditPart" id="JoinNode_3014"/>
+         <context elements="JoinNode_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDecisionNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DecisionNode2EditPart" id="DecisionNode_3015"/>
+         <context elements="DecisionNode_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfMergeNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.MergeNode2EditPart" id="MergeNode_3016"/>
+         <context elements="MergeNode_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfFinalNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.FinalNode2EditPart" id="FinalNode_3017"/>
+         <context elements="FinalNode_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDomainObject3EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DomainObject3EditPart" id="DomainObject_3018"/>
+         <context elements="DomainObject_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfReadModel2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ReadModel2EditPart" id="ReadModel_3019"/>
+         <context elements="ReadModel_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfDomainEvent2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.DomainEvent2EditPart" id="DomainEvent_3020"/>
+         <context elements="DomainEvent_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="com.github.icelyframework.activitystorming.diagram.providers.assistants.ActivitystormingModelingAssistantProviderOfControlNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="com.github.icelyframework.activitystorming.diagram.edit.parts.ControlNode2EditPart" id="ControlNode_3021"/>
+         <context elements="ControlNode_3021"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="com.github.icelyframework.activitystorming.diagram.providers.ActivitystormingShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ActivityDiagram_1000"
+               name="%metatype.name.ActivityDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityDiagram"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ActivityDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.CommandAction_2001"
+               name="%metatype.name.CommandAction_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CommandAction"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.CommandActionEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.Aggregate_2002"
+               name="%metatype.name.Aggregate_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Aggregate"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.AggregateEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.QueryAction_2003"
+               name="%metatype.name.QueryAction_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="QueryAction"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.QueryActionEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ValueObject_2004"
+               name="%metatype.name.ValueObject_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ValueObject_3002"/>
+            <param name="semanticHint" value="2004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.Entity_2005"
+               name="%metatype.name.Entity_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.Entity_3003"/>
+            <param name="semanticHint" value="2005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ExternalSystem_2006"
+               name="%metatype.name.ExternalSystem_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExternalSystem"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ExternalSystemEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ConstraintPin_2007"
+               name="%metatype.name.ConstraintPin_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3001"/>
+            <param name="semanticHint" value="2007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.InitialNode_2008"
+               name="%metatype.name.InitialNode_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InitialNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.InitialNodeEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ForkNode_2009"
+               name="%metatype.name.ForkNode_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ForkNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ForkNodeEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.JoinNode_2010"
+               name="%metatype.name.JoinNode_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="JoinNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.JoinNodeEditHelper">
+            <param name="semanticHint" value="2010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.DecisionNode_2011"
+               name="%metatype.name.DecisionNode_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DecisionNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.DecisionNodeEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.MergeNode_2012"
+               name="%metatype.name.MergeNode_2012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MergeNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.MergeNodeEditHelper">
+            <param name="semanticHint" value="2012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.FinalNode_2013"
+               name="%metatype.name.FinalNode_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FinalNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.FinalNodeEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.DomainObject_2014"
+               name="%metatype.name.DomainObject_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.DomainObject_3004"/>
+            <param name="semanticHint" value="2014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ReadModel_2015"
+               name="%metatype.name.ReadModel_2015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ReadModel"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ReadModelEditHelper">
+            <param name="semanticHint" value="2015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.DomainEvent_2016"
+               name="%metatype.name.DomainEvent_2016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DomainEvent"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.DomainEventEditHelper">
+            <param name="semanticHint" value="2016"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ControlNode_2017"
+               name="%metatype.name.ControlNode_2017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ControlNode"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ControlNodeEditHelper">
+            <param name="semanticHint" value="2017"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.Actor_2018"
+               name="%metatype.name.Actor_2018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Actor"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ActorEditHelper">
+            <param name="semanticHint" value="2018"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.System_2019"
+               name="%metatype.name.System_2019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="System"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.SystemEditHelper">
+            <param name="semanticHint" value="2019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ActivityPartition_2020"
+               name="%metatype.name.ActivityPartition_2020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityPartition"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ActivityPartitionEditHelper">
+            <param name="semanticHint" value="2020"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3001"
+               name="%metatype.name.ConstraintPin_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConstraintPin"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ConstraintPinEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ValueObject_3002"
+               name="%metatype.name.ValueObject_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ValueObject"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ValueObjectEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.Entity_3003"
+               name="%metatype.name.Entity_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Entity"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.EntityEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.DomainObject_3004"
+               name="%metatype.name.DomainObject_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DomainObject"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.DomainObjectEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.CommandAction_3005"
+               name="%metatype.name.CommandAction_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.CommandAction_2001"/>
+            <param name="semanticHint" value="3005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.Aggregate_3006"
+               name="%metatype.name.Aggregate_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.Aggregate_2002"/>
+            <param name="semanticHint" value="3006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.QueryAction_3007"
+               name="%metatype.name.QueryAction_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.QueryAction_2003"/>
+            <param name="semanticHint" value="3007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ValueObject_3008"
+               name="%metatype.name.ValueObject_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ValueObject_3002"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.Entity_3009"
+               name="%metatype.name.Entity_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.Entity_3003"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ExternalSystem_3010"
+               name="%metatype.name.ExternalSystem_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ExternalSystem_2006"/>
+            <param name="semanticHint" value="3010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3011"
+               name="%metatype.name.ConstraintPin_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3001"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.InitialNode_3012"
+               name="%metatype.name.InitialNode_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.InitialNode_2008"/>
+            <param name="semanticHint" value="3012"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ForkNode_3013"
+               name="%metatype.name.ForkNode_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ForkNode_2009"/>
+            <param name="semanticHint" value="3013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.JoinNode_3014"
+               name="%metatype.name.JoinNode_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.JoinNode_2010"/>
+            <param name="semanticHint" value="3014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.DecisionNode_3015"
+               name="%metatype.name.DecisionNode_3015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.DecisionNode_2011"/>
+            <param name="semanticHint" value="3015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.MergeNode_3016"
+               name="%metatype.name.MergeNode_3016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.MergeNode_2012"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.FinalNode_3017"
+               name="%metatype.name.FinalNode_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.FinalNode_2013"/>
+            <param name="semanticHint" value="3017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.DomainObject_3018"
+               name="%metatype.name.DomainObject_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.DomainObject_3004"/>
+            <param name="semanticHint" value="3018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ReadModel_3019"
+               name="%metatype.name.ReadModel_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ReadModel_2015"/>
+            <param name="semanticHint" value="3019"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.DomainEvent_3020"
+               name="%metatype.name.DomainEvent_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.DomainEvent_2016"/>
+            <param name="semanticHint" value="3020"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ControlNode_3021"
+               name="%metatype.name.ControlNode_3021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ControlNode_2017"/>
+            <param name="semanticHint" value="3021"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ObjectFlow_4001"
+               name="%metatype.name.ObjectFlow_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ObjectFlow"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ObjectFlowEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ObjectFlow_4002"
+               name="%metatype.name.ObjectFlow_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ObjectFlow_4001"/>
+            <param name="semanticHint" value="4002"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ControlFlow_4003"
+               name="%metatype.name.ControlFlow_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ControlFlow"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ControlFlowEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ControlFlow_4004"
+               name="%metatype.name.ControlFlow_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ControlFlow_4003"/>
+            <param name="semanticHint" value="4004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <metamodelType
+               id="com.github.icelyframework.activitystorming.diagram.ActivityEdge_4005"
+               name="%metatype.name.ActivityEdge_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActivityEdge"
+               edithelper="com.github.icelyframework.activitystorming.diagram.edit.helpers.ActivityEdgeEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ActivityEdge_4006"
+               name="%metatype.name.ActivityEdge_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="com.github.icelyframework.activitystorming.diagram.ActivityEdge_4005"/>
+            <param name="semanticHint" value="4006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ActionSupplier_4007"
+               name="%metatype.name.ActionSupplier_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.SupplierTriggers_4008"
+               name="%metatype.name.SupplierTriggers_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.SupplierReadmodels_4009"
+               name="%metatype.name.SupplierReadmodels_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.DomainEventReadmodel_4010"
+               name="%metatype.name.DomainEventReadmodel_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://github.com/icelyframework/activitystorming">
+         <specializationType
+               id="com.github.icelyframework.activitystorming.diagram.ConstraintPinTriggers_4011"
+               name="%metatype.name.ConstraintPinTriggers_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4011"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="com.github.icelyframework.activitystorming.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="com.github.icelyframework.activitystorming.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="com.github.icelyframework.activitystorming.diagram.TypeContext">
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ActivityDiagram_1000"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.CommandAction_2001"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Aggregate_2002"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.QueryAction_2003"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ValueObject_2004"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Entity_2005"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ExternalSystem_2006"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ConstraintPin_2007"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.InitialNode_2008"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ForkNode_2009"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.JoinNode_2010"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DecisionNode_2011"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.MergeNode_2012"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.FinalNode_2013"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainObject_2014"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ReadModel_2015"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainEvent_2016"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ControlNode_2017"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Actor_2018"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.System_2019"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ActivityPartition_2020"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3001"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ValueObject_3002"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Entity_3003"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainObject_3004"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.CommandAction_3005"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Aggregate_3006"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.QueryAction_3007"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ValueObject_3008"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.Entity_3009"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ExternalSystem_3010"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ConstraintPin_3011"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.InitialNode_3012"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ForkNode_3013"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.JoinNode_3014"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DecisionNode_3015"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.MergeNode_3016"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.FinalNode_3017"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainObject_3018"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ReadModel_3019"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainEvent_3020"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ControlNode_3021"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ObjectFlow_4001"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ObjectFlow_4002"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ControlFlow_4003"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ControlFlow_4004"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ActivityEdge_4005"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ActivityEdge_4006"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ActionSupplier_4007"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.SupplierTriggers_4008"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.SupplierReadmodels_4009"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.DomainEventReadmodel_4010"/>
+         <elementType ref="com.github.icelyframework.activitystorming.diagram.ConstraintPinTriggers_4011"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="com.github.icelyframework.activitystorming.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="com.github.icelyframework.activitystorming.diagram"
+           properties="isURIEditorInput"
+           class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="com.github.icelyframework.activitystorming.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="com.github.icelyframework.activitystorming.diagram"
+           properties="isShortcut"
+           class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="com.github.icelyframework.activitystorming.diagram.resourceContent"/>
+			<contentExtension pattern="com.github.icelyframework.activitystorming.diagram.domainResourceContent"/>
+            <contentExtension pattern="com.github.icelyframework.activitystorming.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="com.github.icelyframework.activitystorming.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="com.github.icelyframework.activitystorming.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingNavigatorContentProvider" 
+            labelProvider="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingNavigatorLabelProvider"
+            icon="icons/obj16/ActivitystormingDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="activitystorming_diagram"/>
+               </and>
+               <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="com.github.icelyframework.activitystorming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="com.github.icelyframework.activitystorming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="com.github.icelyframework.activitystorming.diagram.navigatorSorter" 
+               class="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="activitystorming_diagram"/>
+                  </and>
+                  <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="com.github.icelyframework.activitystorming.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingDomainNavigatorContentProvider" 
+            labelProvider="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingDomainNavigatorLabelProvider"
+            icon="icons/obj16/ActivitystormingDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="activitystorming"/>
+               </and>
+               <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="com.github.icelyframework.activitystorming.diagram.navigatorActionProvider"
+            class="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="com.github.icelyframework.activitystorming.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="com.github.icelyframework.activitystorming.diagram.navigatorLinkHelper"
+            class="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="com.github.icelyframework.activitystorming.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="com.github.icelyframework.activitystorming.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="com.github.icelyframework.activitystorming.diagram.updateDiagram"
+         contextId="com.github.icelyframework.activitystorming.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="com.github.icelyframework.activitystorming.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="com.github.icelyframework.activitystorming.diagram.edit.parts.ActivityDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="com.github.icelyframework.activitystorming.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID"
+         defaultHandler="com.github.icelyframework.activitystorming.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

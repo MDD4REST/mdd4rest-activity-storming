@@ -1,0 +1,7 @@
+# Tracing options for the com.github.icelyframework.activitystorming.diagram plug-in
+
+# Common issues
+com.github.icelyframework.activitystorming.diagram/debug=false
+
+# Visual IDs
+com.github.icelyframework.activitystorming.diagram/debug/visualID=false

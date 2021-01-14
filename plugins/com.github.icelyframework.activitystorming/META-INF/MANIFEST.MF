@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.github.icelyframework.activitystorming;singleton:=true
+Automatic-Module-Name: com.github.icelyframework.activitystorming
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: com.github.icelyframework.activitystorming,
+ com.github.icelyframework.activitystorming.impl,
+ com.github.icelyframework.activitystorming.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,10 @@
+var genModel = GenModel!GenModel.all.first();
+genModel.complianceLevel = GenModel!GenJDKLevel#JDK70;
+
+//genModel.editPluginClass = "com.github.icelyframework.activitystorming.provider.ActivitystormingEditPlugin";
+//genModel.editorPluginClass = "com.github.icelyframework.activitystorming.presentation.ActivitystormingEditorPlugin";
+genModel.println();
+
+var genPackage =  GenModel!GenPackage.all.first();
+genPackage.basePackage = "com.github.icelyframework";
+genPackage.println();
