@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com.github.icelyframework.activitystorming" />
+        <module name="com.github.icelyframework.activitystorming.tests" />
+        <module name="com.github.icelyframework.activitystorming.update" />
+        <module name="com.github.icelyframework.activitystorming.feature" />
+        <module name="com.github.icelyframework.activitystorming.diagram" />
+        <module name="com.github.icelyframework.activitystorming.editor" />
+        <module name="com.github.icelyframework.activitystorming.edit" />
+        <module name="com.github.icelyframework.activitystorming.target" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.github.icelyframework.activity-storming" target="1.5" />
+      <module name="com.github.icelyframework.activity-storming.diagram" target="1.5" />
+      <module name="com.github.icelyframework.activity-storming.edit" target="1.5" />
+      <module name="com.github.icelyframework.activity-storming.editor" target="1.5" />
+      <module name="com.github.icelyframework.activity-storming.target" target="1.5" />
+      <module name="com.github.icelyframework.activity-storming.tests" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.diagram" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.edit" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.editor" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.feature" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.target" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.tests" target="1.5" />
+      <module name="com.github.icelyframework.activitystorming.update" target="1.5" />
+      <module name="com.github.icelyframework.icely-activity-storming.mm" target="1.5" />
+      <module name="features" target="1.5" />
+      <module name="icely-activity-storming" target="1.5" />
+      <module name="plugins" target="1.5" />
+      <module name="releng" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

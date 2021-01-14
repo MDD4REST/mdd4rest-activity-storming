@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming/com.github.icelyframework.activitystorming.iml" filepath="$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming/com.github.icelyframework.activitystorming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.diagram/com.github.icelyframework.activitystorming.diagram.iml" filepath="$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.diagram/com.github.icelyframework.activitystorming.diagram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.edit/com.github.icelyframework.activitystorming.edit.iml" filepath="$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.edit/com.github.icelyframework.activitystorming.edit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.editor/com.github.icelyframework.activitystorming.editor.iml" filepath="$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.editor/com.github.icelyframework.activitystorming.editor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/com.github.icelyframework.activitystorming.feature/com.github.icelyframework.activitystorming.feature.iml" filepath="$PROJECT_DIR$/features/com.github.icelyframework.activitystorming.feature/com.github.icelyframework.activitystorming.feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/com.github.icelyframework.activitystorming.target/com.github.icelyframework.activitystorming.target.iml" filepath="$PROJECT_DIR$/releng/com.github.icelyframework.activitystorming.target/com.github.icelyframework.activitystorming.target.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.tests/com.github.icelyframework.activitystorming.tests.iml" filepath="$PROJECT_DIR$/plugins/com.github.icelyframework.activitystorming.tests/com.github.icelyframework.activitystorming.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/com.github.icelyframework.activitystorming.update/com.github.icelyframework.activitystorming.update.iml" filepath="$PROJECT_DIR$/releng/com.github.icelyframework.activitystorming.update/com.github.icelyframework.activitystorming.update.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/features.iml" filepath="$PROJECT_DIR$/features/features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/icely-activity-storming.iml" filepath="$PROJECT_DIR$/icely-activity-storming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/plugins.iml" filepath="$PROJECT_DIR$/plugins/plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releng/releng.iml" filepath="$PROJECT_DIR$/releng/releng.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,7 +1,0 @@
-# Tracing options for the activity-storming.diagram plug-in
-
-# Common issues
-activity-storming.diagram/debug=false
-
-# Visual IDs
-activity-storming.diagram/debug/visualID=false
