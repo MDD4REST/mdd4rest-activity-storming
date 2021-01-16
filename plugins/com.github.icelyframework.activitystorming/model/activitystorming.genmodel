@@ -2,11 +2,7 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/com.github.icelyframework.activitystorming/src"
     modelPluginID="com.github.icelyframework.activitystorming" modelName="Activitystorming"
-    editPluginClass="com.github.icelyframework.activitystorming.provider.ActivitystormingEditPlugin"
-    editorPluginClass="com.github.icelyframework.activitystorming.presentation.ActivitystormingEditorPlugin"
-    testSuiteClass="com.github.icelyframework.activitystorming.tests.ActivitystormingAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    operationReflection="true">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
   <foreignModel>activitystorming.ecore</foreignModel>
   <genPackages prefix="Activitystorming" basePackage="com.github.icelyframework" disposableProviderFactory="true"
       fileExtensions="actstorm" ecorePackage="activitystorming.ecore#/">

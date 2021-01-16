@@ -7,4 +7,5 @@ genModel.println();
 
 var genPackage =  GenModel!GenPackage.all.first();
 genPackage.basePackage = "com.github.icelyframework";
+genPackage.fileExtensions = "actstorm";
 genPackage.println();

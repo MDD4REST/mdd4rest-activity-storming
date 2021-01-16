@@ -45,15 +45,33 @@ You can use the update site through the `Help->Install new software` menu in Ecl
 [https://icelyframework.github.io/icely-activity-storming/updates/](https://icelyframework.github.io/icely-activity-storming/updates/)
 
 ### Using Standalone as Package
-To use Icely Activity Storming as standlone package, JARs are available from Maven Central. to use Icely Activity Storming JAR from your `pom.xml`:
-(In Progress)
+To use Icely Activity Storming as standlone package, JARs are available from Github Packages.
 
+Example using Maven:
+```xml
+<dependencies>
+  ...
+    <dependency>
+        <groupId>com.github.icelyframework.activitystorming</groupId>
+        <artifactId>com.github.icelyframework.activitystorming</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+  ...
+</dependencies>
+```
+
+Example using Gradle Groovy:
+```groovy
+dependencies {
+    implementation 'com.github.icelyframework.activitystorming:com.github.icelyframework.activitystorming:1.0.1'
+}
+```
 ## Development (In Progress)
 
 ## ☑ Roadmap
 If you want to see a new feature feel free to create a new Issue. Here are some features which are either underway or planned:
 
-- [ ] Deploy To Maven Central
+- [x] Deploy To Github Packages
 
 If you'd like to give any of these a shot feel free to contribute.
 

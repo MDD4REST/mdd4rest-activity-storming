@@ -79,8 +79,8 @@ public class ActivitystormingNewDiagramFileWizard extends Wizard {
 			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(
-				ActivitystormingDiagramEditorUtil.getUniqueFileName(filePath, fileName, "activitystorming_diagram")); //$NON-NLS-1$
+		myFileCreationPage
+				.setFileName(ActivitystormingDiagramEditorUtil.getUniqueFileName(filePath, fileName, "gctstorm")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.ActivitystormingNewDiagramFileWizard_RootSelectionPageName);

@@ -2,7 +2,7 @@
 <feature
       id="com.github.icelyframework.activitystorming.feature"
       label="Icely Activity Storming"
-      version="1.0.0"
+      version="1.0.1"
       provider-name="Icely Framework Labs">
 
    <description url="https://github.com/IcelyFramework/icely-activity-storming">
