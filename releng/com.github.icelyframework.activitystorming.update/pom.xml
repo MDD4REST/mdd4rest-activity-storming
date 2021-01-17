@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.github.icelyframework.activitystorming</groupId>
         <artifactId>releng</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
     </parent>
     <artifactId>com.github.icelyframework.activitystorming.update</artifactId>
     <packaging>eclipse-repository</packaging>

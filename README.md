@@ -54,7 +54,7 @@ Example using Maven:
     <dependency>
         <groupId>com.github.icelyframework.activitystorming</groupId>
         <artifactId>com.github.icelyframework.activitystorming</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
     </dependency>
   ...
 </dependencies>

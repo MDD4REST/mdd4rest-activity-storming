@@ -103,20 +103,19 @@ public class ActivitystormingCreationWizard extends Wizard implements INewWizard
 	* @generated
 	*/
 	public void addPages() {
-		diagramModelFilePage = new ActivitystormingCreationWizardPage("DiagramModelFile", getSelection(), "actstorm"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage = new ActivitystormingCreationWizardPage("DiagramModelFile", getSelection(), "gctstorm"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage.setTitle(Messages.ActivitystormingCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(Messages.ActivitystormingCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new ActivitystormingCreationWizardPage("DomainModelFile", getSelection(), //$NON-NLS-1$
-				"activitystorming") { //$NON-NLS-1$
+		domainModelFilePage = new ActivitystormingCreationWizardPage("DomainModelFile", getSelection(), "actstorm") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".actstorm".length()); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".gctstorm".length()); //$NON-NLS-1$
 					setFileName(ActivitystormingDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
-							"activitystorming")); //$NON-NLS-1$
+							"actstorm")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

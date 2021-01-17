@@ -80,7 +80,7 @@ public class ActivitystormingNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage
-				.setFileName(ActivitystormingDiagramEditorUtil.getUniqueFileName(filePath, fileName, "actstorm")); //$NON-NLS-1$
+				.setFileName(ActivitystormingDiagramEditorUtil.getUniqueFileName(filePath, fileName, "gctstorm")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.ActivitystormingNewDiagramFileWizard_RootSelectionPageName);

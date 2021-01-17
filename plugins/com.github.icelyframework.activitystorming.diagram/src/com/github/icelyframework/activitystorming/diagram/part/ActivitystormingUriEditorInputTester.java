@@ -19,7 +19,7 @@ public class ActivitystormingUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "actstorm".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "gctstorm".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

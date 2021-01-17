@@ -7,13 +7,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="actstorm"/>
+      <fileTypes type="text" extension="gctstorm"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="actstorm"
+         type="gctstorm"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -24,7 +24,7 @@
          id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ActivitystormingDiagramFile.gif"
-         extensions="actstorm"
+         extensions="gctstorm"
          default="true"
          class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditor"
          matchingStrategy="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingMatchingStrategy"
@@ -58,7 +58,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="com.github.icelyframework.activitystorming.diagram.InitDiagram"
-            nameFilter="*.activitystorming"
+            nameFilter="*.actstorm"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
@@ -1151,7 +1151,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="actstorm"/>
+        	      <test property="org.eclipse.core.resources.extension" value="gctstorm"/>
                </and>
                <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
@@ -1174,7 +1174,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="actstorm"/>
+        	         <test property="org.eclipse.core.resources.extension" value="gctstorm"/>
                   </and>
                   <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
                </or>
@@ -1193,7 +1193,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="activitystorming"/>
+        	      <test property="org.eclipse.core.resources.extension" value="actstorm"/>
                </and>
                <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingDomainNavigatorItem"/>
             </or>

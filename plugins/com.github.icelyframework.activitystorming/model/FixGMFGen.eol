@@ -1,4 +1,4 @@
 var gmfGen = GmfGen!GenEditorGenerator.all.first();
 gmfGen.diagramFileExtension = "gctstorm";
-gmfGen.diagramFileExtension = "actstorm";
+gmfGen.domainFileExtension = "actstorm";
 gmfGen.println();
