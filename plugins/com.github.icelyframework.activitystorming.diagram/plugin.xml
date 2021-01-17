@@ -7,13 +7,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="gctstorm"/>
+      <fileTypes type="text" extension="actstorm"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="gctstorm"
+         type="actstorm"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -24,7 +24,7 @@
          id="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ActivitystormingDiagramFile.gif"
-         extensions="gctstorm"
+         extensions="actstorm"
          default="true"
          class="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingDiagramEditor"
          matchingStrategy="com.github.icelyframework.activitystorming.diagram.part.ActivitystormingMatchingStrategy"
@@ -1151,7 +1151,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="gctstorm"/>
+        	      <test property="org.eclipse.core.resources.extension" value="actstorm"/>
                </and>
                <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
@@ -1174,7 +1174,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="gctstorm"/>
+        	         <test property="org.eclipse.core.resources.extension" value="actstorm"/>
                   </and>
                   <instanceof value="com.github.icelyframework.activitystorming.diagram.navigator.ActivitystormingAbstractNavigatorItem"/>
                </or>

@@ -7,6 +7,6 @@
     <parent>
         <groupId>com.github.icelyframework.activitystorming</groupId>
         <artifactId>plugins</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
 </project>
